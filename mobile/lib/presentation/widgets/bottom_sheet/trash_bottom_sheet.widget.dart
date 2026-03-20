@@ -10,13 +10,16 @@ class TrashBottomBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final systemUiBottomPadding = MediaQuery.of(context).viewPadding.bottom;
     return SafeArea(
+      bottom: false,
       child: Align(
         alignment: Alignment.bottomCenter,
         child: SizedBox(
-          height: 64,
+          height: 64 + systemUiBottomPadding,
           child: Container(
             color: context.themeData.canvasColor,
+            padding: EdgeInsets.only(bottom: systemUiBottomPadding),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

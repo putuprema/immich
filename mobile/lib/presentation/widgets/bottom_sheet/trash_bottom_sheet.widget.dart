@@ -12,8 +12,9 @@ class TrashBottomBar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Align(
       alignment: Alignment.bottomCenter,
-      child: ColoredBox(
+      child: Container(
         color: context.themeData.canvasColor,
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: const SafeArea(
           top: false,
           child: Row(
